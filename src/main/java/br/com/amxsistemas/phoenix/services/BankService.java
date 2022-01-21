@@ -21,4 +21,20 @@ public class BankService {
         return list.stream().map(x -> new BankDTO(x)).collect(Collectors.toList());
     }
 
+    @Transactional
+    public BankDTO insert(BankDTO dto) {
+        Bank bank = new Bank(null, dto.getCode(), dto.getName());
+        bank = repository.save(bank);
+        return new BankDTO(bank);
+    }
+
+    @Transactional
+    public BankDTO edit(BankDTO dto) {
+        Bank bank = repository.getOne(dto.getId());
+        bank.setCode(dto.getCode());
+        bank.setName(dto.getName());
+        bank = repository.save(bank);
+        return new BankDTO(bank);
+    }
+
 }
