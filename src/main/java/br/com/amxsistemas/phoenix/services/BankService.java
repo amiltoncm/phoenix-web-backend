@@ -23,7 +23,7 @@ public class BankService {
 
     @Transactional
     public BankDTO insert(BankDTO dto) {
-        Bank bank = new Bank(null, dto.getCode(), dto.getName());
+        Bank bank = new Bank(null, dto.getCode(), dto.getName(), dto.getStatus());
         bank = repository.save(bank);
         return new BankDTO(bank);
     }
@@ -33,6 +33,7 @@ public class BankService {
         Bank bank = repository.getOne(dto.getId());
         bank.setCode(dto.getCode());
         bank.setName(dto.getName());
+        bank.setStatus(dto.getStatus());
         bank = repository.save(bank);
         return new BankDTO(bank);
     }

@@ -29,5 +29,8 @@ public class Bank {
 	
 	@Column(nullable = false, unique = true, length = 50)
 	private String name;
+
+	@Column(nullable = false, length = 1)
+	private String status;
 	
 }
