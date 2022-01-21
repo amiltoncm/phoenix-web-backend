@@ -17,7 +17,7 @@ public class BankService {
 
     @Transactional(readOnly = true)
     public List<BankDTO> findAll() {
-        List<Bank> list = repository.findAll();
+        List<Bank> list = repository.findAllByOrderByNameAsc();
         return list.stream().map(x -> new BankDTO(x)).collect(Collectors.toList());
     }
 
