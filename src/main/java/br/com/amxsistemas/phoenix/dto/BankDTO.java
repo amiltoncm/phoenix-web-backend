@@ -14,13 +14,15 @@ public class BankDTO {
 	public BankDTO() {
 	}
 
-	public BankDTO(Long id, String name) {
+	public BankDTO(Long id, Long code, String name) {
 		this.id = id;
+		this.code = code;
 		this.name = name;
 	}
 
 	public BankDTO(Bank entity) {
 		id = entity.getId();
+		code = entity.getCode();
 		name = entity.getName();
 	}
 

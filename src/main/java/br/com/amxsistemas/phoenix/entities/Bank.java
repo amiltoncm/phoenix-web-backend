@@ -23,8 +23,11 @@ public class Bank {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Long id;
+
+	@Column(nullable = false, unique = true)
+	private Long code;
 	
-	@Column
+	@Column(nullable = false, unique = true, length = 50)
 	private String name;
 	
 }
