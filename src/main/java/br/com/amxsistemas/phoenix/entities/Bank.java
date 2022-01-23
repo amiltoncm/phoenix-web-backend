@@ -1,5 +1,6 @@
 package br.com.amxsistemas.phoenix.entities;
 
+import br.com.amxsistemas.phoenix.enums.ActiveStatus;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,7 +31,7 @@ public class Bank {
 	@Column(nullable = false, unique = true, length = 50)
 	private String name;
 
-	@Column(nullable = false, length = 1)
-	private String status;
+	@Column(nullable = false)
+	private ActiveStatus status;
 	
 }
