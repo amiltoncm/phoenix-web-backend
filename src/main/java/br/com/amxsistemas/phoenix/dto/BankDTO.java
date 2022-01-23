@@ -2,6 +2,7 @@ package br.com.amxsistemas.phoenix.dto;
 
 import br.com.amxsistemas.phoenix.entities.Bank;
 import br.com.amxsistemas.phoenix.enums.ActiveStatus;
+
 import lombok.Getter;
 import lombok.Setter;
 
