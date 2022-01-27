@@ -8,20 +8,20 @@ import lombok.Setter;
 @Setter
 public class RegimeDTO {
 
-	private Integer id;
-	private String description;
+    private Integer id;
+    private String description;
 
-	public RegimeDTO() {
-	}
+    public RegimeDTO() {
+    }
 
-	public RegimeDTO(Integer id, String description) {
-		this.id = id;
-		this.description = description;
-	}
+    public RegimeDTO(Integer id, String description) {
+        this.id = id;
+        this.description = description;
+    }
 
-	public RegimeDTO(Regime entity) {
-		id = entity.getId();
-		description = entity.getDescription();
-	}
+    public RegimeDTO(Regime entity) {
+        id = entity.getId();
+        description = entity.getDescription();
+    }
 
 }

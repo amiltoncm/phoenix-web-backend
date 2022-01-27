@@ -1,11 +1,11 @@
 package br.com.amxsistemas.phoenix.entities;
 
-import javax.persistence.*;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
 
 @Getter
 @Setter

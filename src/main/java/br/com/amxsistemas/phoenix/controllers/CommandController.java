@@ -1,30 +1,29 @@
 package br.com.amxsistemas.phoenix.controllers;
 
-import br.com.amxsistemas.phoenix.dto.RegimeDTO;
-import br.com.amxsistemas.phoenix.services.RegimeService;
+import br.com.amxsistemas.phoenix.dto.CommandDTO;
+import br.com.amxsistemas.phoenix.services.CommandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/regimes")
-public class RegimeController {
+@RequestMapping(value = "/commands")
+public class CommandController {
 
     @Autowired
-    private RegimeService service;
+    private CommandService service;
 
     @GetMapping
-    public ResponseEntity<List<RegimeDTO>> findAll() {
-        List<RegimeDTO> list = service.findAll();
+    public ResponseEntity<List<CommandDTO>> findAll() {
+        List<CommandDTO> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @PostMapping
-    public ResponseEntity<RegimeDTO> insert(@RequestBody RegimeDTO dto) {
+    public ResponseEntity<CommandDTO> insert(@RequestBody CommandDTO dto) {
         dto = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").
                 buildAndExpand(dto.getId()).toUri();
@@ -32,7 +31,7 @@ public class RegimeController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<RegimeDTO> edit(@PathVariable Long id, @RequestBody RegimeDTO dto) {
+    public ResponseEntity<CommandDTO> edit(@PathVariable Long id, @RequestBody CommandDTO dto) {
         service.edit(dto);
         return ResponseEntity.ok().body(dto);
     }

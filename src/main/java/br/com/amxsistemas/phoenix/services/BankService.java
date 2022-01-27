@@ -3,13 +3,11 @@ package br.com.amxsistemas.phoenix.services;
 import br.com.amxsistemas.phoenix.dto.BankDTO;
 import br.com.amxsistemas.phoenix.entities.Bank;
 import br.com.amxsistemas.phoenix.repositories.BankRepository;
-
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class BankService {
