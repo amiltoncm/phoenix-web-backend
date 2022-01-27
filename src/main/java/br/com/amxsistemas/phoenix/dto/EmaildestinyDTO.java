@@ -1,25 +1,25 @@
 package br.com.amxsistemas.phoenix.dto;
 
-import br.com.amxsistemas.phoenix.entities.Emaildest;
+import br.com.amxsistemas.phoenix.entities.Emaildestiny;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class EmaildestDTO {
+public class EmaildestinyDTO {
 
     private Long id;
     private String address;
 
-    public EmaildestDTO() {
+    public EmaildestinyDTO() {
     }
 
-    public EmaildestDTO(Long id, String address) {
+    public EmaildestinyDTO(Long id, String address) {
         this.id = id;
         this.address = address;
     }
 
-    public EmaildestDTO(Emaildest entity) {
+    public EmaildestinyDTO(Emaildestiny entity) {
         id = entity.getId();
         address = entity.getAddress();
     }
