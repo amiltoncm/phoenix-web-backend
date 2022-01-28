@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 
 @Getter
@@ -21,58 +20,62 @@ public class Company {
     @Column
     private Integer id;
 
-    @Column
+    @Column(nullable = false, unique = true, length = 50)
     private String name;
 
-    @Column
+    @Column(nullable = false, unique = true, length = 50)
     private String alias;
 
-    @Column
+    @Column(nullable = false, unique = true, length = 18)
     private String document;
 
-    @Column
+    @Column(nullable = false, unique = true, length = 15)
     private String identification;
 
-    @Column
+    @Column(nullable = false, unique = true, length = 10)
     private String subscription;
 
-    @Column
+    @Column(nullable = false, length = 50)
     private String address;
 
-    @Column
+    @Column(nullable = false)
     private Long number;
 
-    @Column
+    @Column(length = 20)
     private String complement;
 
-    @Column
+    @Column(length = 20)
     private String district;
 
-    @Column
+    @Column(nullable = false)
     private Long city_id;
 
-    @Column
+    @Column(nullable = false, length = 50)
     private String city;
 
-    @Column
+    @Column(nullable = false,length = 2)
     private String state;
 
-    @Column
+    @Column(nullable = false)
     private Integer country_id;
 
-    @Column
+    @Column(nullable = false, length = 9)
     private String zip;
 
-    @Column
+    @Column(nullable = false, length = 15)
     private String phone;
 
-    @Column
+    @Column(nullable = false, length = 50)
     private String email;
 
-    @Column
+    @Column(length = 50)
     private String home_page;
 
-    @Column
+    @Column(nullable = false)
     private ActiveStatus status;
+
+    @ManyToOne
+    @JoinColumn(name = "regimeId", nullable = false)
+    private Regime regime;
 
 }
