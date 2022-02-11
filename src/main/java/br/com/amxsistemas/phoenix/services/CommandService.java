@@ -1,8 +1,6 @@
 package br.com.amxsistemas.phoenix.services;
 
-import br.com.amxsistemas.phoenix.dto.BankDTO;
 import br.com.amxsistemas.phoenix.dto.CommandDTO;
-import br.com.amxsistemas.phoenix.entities.Bank;
 import br.com.amxsistemas.phoenix.entities.Command;
 import br.com.amxsistemas.phoenix.repositories.CommandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
